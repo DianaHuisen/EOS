@@ -1,0 +1,9 @@
+#!usr/bin/env bash
+DIRNAME=$1
+mkdir -p Afbeeldingen
+mkdir -p Afbeeldingen/Vakantie
+
+find $DIRNAME -name '*.jpg' -o -name '*.png' | grep 'vakantie' | xargs -I {} mv {} Afbeeldingen/Vakantie
+
+find $DIRNAME -name '*.jpg' -o -name '*.png' | xargs -I {} mv {} Afbeeldingen/
+
